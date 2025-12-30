@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Return Book</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>Return Book</h2>
+    <form method="POST" action="/return">
+        <label>Select Book (ISBN):</label>
+        <select name="isbn" required>
+            {% for b in books %}
+              <option value="{{ b.isbn }}">{{ b.title }} — {{ b.isbn }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label>Select Member:</label>
+        <select name="member_id" required>
+            {% for m in members %}
+              <option value="{{ m.member_id }}">{{ m.name }} — {{ m.member_id }}</option>
+            {% endfor %}
+        </select><br>
+
+        <button type="submit">Return</button>
+    </form>
+    <br>
+    <a href="/">Go Back to Home</a>
+</body>
+</html>

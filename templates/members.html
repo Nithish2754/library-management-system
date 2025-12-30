@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Members List</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>👥 Library Members</h2>
+    {% if members %}
+      <table>
+        <tr>
+          <th>Member ID</th>
+          <th>Name</th>
+        </tr>
+        {% for m in members %}
+        <tr>
+          <td>{{ m.member_id }}</td>
+          <td>{{ m.name }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p>No members found.</p>
+    {% endif %}
+    <br>
+    <a href="/">Go Back to Home</a>
+</body>
+</html>

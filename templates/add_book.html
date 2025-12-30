@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Book</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>Add / Update Book</h2>
+    <form method="POST" action="/add_book">
+        <label>ISBN:</label>
+        <input type="text" name="isbn" required><br>
+
+        <label>Title:</label>
+        <input type="text" name="title" required><br>
+
+        <label>Author:</label>
+        <input type="text" name="author" required><br>
+
+        <label>Number of Copies:</label>
+        <input type="number" name="copies" min="1" required><br>
+
+        <button type="submit">Add Book</button>
+    </form>
+    <br>
+    <a href="/">Go Back to Home</a>
+</body>
+</html>

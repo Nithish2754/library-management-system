@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>📚 Welcome to the Library Management System</h1>
+    <div class="menu">
+        <a href="/add_book">➕ Add Book</a>
+        <a href="/books">📖 View Books</a>
+        <a href="/add_member">👤 Add Member</a>
+        <a href="/members">🧾 View Members</a>
+        <a href="/issue">📦 Issue Book</a>
+        <a href="/return">🔄 Return Book</a>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="messages">
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>

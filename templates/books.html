@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books List</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>📘 All Books</h2>
+    {% if books %}
+      <table>
+        <tr>
+          <th>ISBN</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Copies</th>
+          <th>Action</th>
+        </tr>
+        {% for b in books %}
+        <tr>
+          <td>{{ b.isbn }}</td>
+          <td>{{ b.title }}</td>
+          <td>{{ b.author }}</td>
+          <td>{{ b.copies }}</td>
+          <td>
+            <form method="POST" action="/remove_book" style="display:inline;">
+              <input type="hidden" name="isbn" value="{{ b.isbn }}">
+              <button type="submit">Remove</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p>No books found.</p>
+    {% endif %}
+    <br>
+    <a href="/">Go Back to Home</a>
+</body>
+</html>
